@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+      #video{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 320px;
+        height: 240px;
+        background-color: aqua;
+      }
+      .container1{
+        padding-right: 15px;
+        padding-left: 50px;
+        margin-right: auto;
+        margin-left:auto;
+      }
+      h2{
+        columns: #353535;
+      }
+      
+    </style>
+    <title>您的鱼缸</title>
+  </head>
+  <body>
+        <!-- nav -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand">DeepSeaFish</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('index')}}">首页</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{url_for('video')}}">远程视频<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('mystatic')}}">数据分析</a>
+                </li>
+              </ul>
+              <a class="btn btn-danger" href="{{url_for('login')}}" role="button">登出</a>
+            </div>
+        </nav>
+        <div class="jumbotron">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="container1">
+                <h1>在这里欣赏您的鱼缸吧!</h1>
+                <p>通过视频您可以实时监控鱼缸的状况,并远程对其操作,</p>
+                <h3 style="border-bottom: 1px solid;padding-bottom: 20px;width: 300px;">无论何时何地。</h3>
+                <!-- 视频嵌入 -->
+                <div id="video">请点击播放视频</div>
+                <p><a class="btn btn-primary btn-lg" href="{{url_for('video_play')}}" role="button">点击播放</a></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="container2">
+                <h2>操作列表</h2>
+                <p>点击按钮进行相应操作</p>
+                <p>-</p>
+                <h4>给你的小鱼投喂些食物吧!</h4>
+                <p>
+                  <a role="button" class="btn btn-warning" href="{{url_for('water')}}">一键换水</a>
+                  <a role="button" class="btn btn-success" href="{{url_for('mystatic')}}">查看记录</a>
+                </p>
+                <p>-</p>
+                <h4>给你的鱼缸换次水吧!</h4>
+                <p>
+                  <a role="button" class="btn btn-warning" href="{{url_for('feed')}}">一键投食</a>
+                  <a role="button" class="btn btn-success" href="{{url_for('mystatic')}}">查看记录</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.2.1/echarts-en.common.min.js"></script>
+  </body>
+</html>
